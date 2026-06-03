@@ -54,6 +54,8 @@ jobs:
       - name: Build signed release AAB
         run: ./gradlew :app:bundleRelease
         env:
+          VERSION_CODE: ${{ github.run_number }}
+          VERSION_NAME: 0.1.${{ github.run_number }}
           ANDROID_KEYSTORE_PATH: ${{ runner.temp }}/upload-keystore.jks
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
