@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.striklewin.apps"
-    compileSdk = 34
+    compileSdk = 35
 
     val releaseKeystorePath = System.getenv("ANDROID_KEYSTORE_PATH")
     val releaseKeystorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
@@ -22,7 +22,7 @@ android {
     defaultConfig {
         applicationId = "com.striklewin.apps"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = System.getenv("VERSION_CODE")?.toIntOrNull() ?: 1
         versionName = System.getenv("VERSION_NAME") ?: "0.1.0"
 
