@@ -5,4 +5,6 @@ local.properties
 .DS_Store
 *.jks
 *.keystore
+winballbattle-*.json
+google-play-service-account*.json
 app/release/
