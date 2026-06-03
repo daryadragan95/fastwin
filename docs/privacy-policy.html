@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy - fastwin</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7f2;
+        --text: #172018;
+        --muted: #526052;
+        --line: #d7ded2;
+        --accent: #176b3a;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.65;
+      }
+
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+      }
+
+      h1,
+      h2 {
+        line-height: 1.2;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 40px;
+      }
+
+      h2 {
+        margin-top: 36px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-size: 24px;
+      }
+
+      p,
+      li {
+        font-size: 17px;
+      }
+
+      .meta {
+        margin: 0 0 32px;
+        color: var(--muted);
+      }
+
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy Policy for fastwin</h1>
+      <p class="meta">Last updated: June 3, 2026</p>
+
+      <p>
+        This Privacy Policy explains how fastwin ("the app", "we", "our", or "us")
+        handles information when you use the Android application with package name
+        <strong>com.striklewin.apps</strong>.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <p>
+        The native game part of fastwin does not require an account and does not ask
+        you to provide your name, email address, phone number, precise location, or
+        other direct personal identifiers.
+      </p>
+      <p>
+        The app stores gameplay information locally on your device, such as your
+        high score and app preferences. This information is used only to keep the app
+        working as expected and is not sent to our own server.
+      </p>
+
+      <h2>Remote Configuration and Firebase</h2>
+      <p>
+        The app uses Firebase Firestore to read a remote configuration value from
+        the collection <strong>config</strong>, document <strong>app</strong>, field
+        <strong>url</strong>. This value is used to decide whether the app should
+        open the native game experience or a fullscreen WebView.
+      </p>
+      <p>
+        When the app contacts Firebase, Google/Firebase may process technical data
+        such as device information, app information, IP address, network information,
+        and diagnostics according to Google's own privacy terms.
+      </p>
+
+      <h2>WebView, Cookies, and Website Content</h2>
+      <p>
+        If the remote configuration provides a web URL, fastwin opens that URL in a
+        fullscreen WebView. The WebView supports JavaScript, DOM storage, cookies,
+        and third-party cookies so that the website can function correctly.
+      </p>
+      <p>
+        Websites opened inside the WebView may collect information according to
+        their own privacy practices. We do not control the privacy practices of
+        third-party websites shown inside the WebView.
+      </p>
+
+      <h2>Camera, Files, and Downloads</h2>
+      <p>
+        The app includes WebView support for file selection, file upload, downloads,
+        and camera capture through Android's FileProvider. These features are used
+        only when you interact with a website inside the WebView that requests file
+        upload or camera capture.
+      </p>
+      <p>
+        The app does not access your camera or files in the background. Camera or
+        file access happens only after an action you initiate and after any required
+        Android permission flow.
+      </p>
+
+      <h2>How We Use Information</h2>
+      <p>Information handled by the app is used to:</p>
+      <ul>
+        <li>Run the game and save local gameplay progress.</li>
+        <li>Read remote configuration from Firebase Firestore.</li>
+        <li>Open WebView content when configured.</li>
+        <li>Support WebView features such as cookies, file upload, camera capture, and downloads.</li>
+        <li>Maintain app functionality, security, and reliability.</li>
+      </ul>
+
+      <h2>Data Sharing</h2>
+      <p>
+        We do not sell your personal information. Technical information may be
+        processed by service providers used by the app, including Google Firebase
+        and services used by websites opened inside the WebView.
+      </p>
+
+      <h2>Data Retention and Deletion</h2>
+      <p>
+        Local app data, such as high scores and cached configuration values, remains
+        on your device until you clear the app data or uninstall the app.
+      </p>
+      <p>
+        You can delete local app data through Android system settings by clearing
+        storage for fastwin or uninstalling the app.
+      </p>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        fastwin is not directed to children under 13. We do not knowingly collect
+        personal information from children under 13. If you believe a child has
+        provided personal information through content opened in the WebView, please
+        contact the operator of that website or contact us through the developer
+        contact listed on Google Play.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        We use reasonable technical measures provided by Android, Firebase, and
+        GitHub Pages to operate the app and this policy page. No method of
+        electronic transmission or storage is completely secure.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Updates will be posted
+        on this page with a new "Last updated" date.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For privacy questions, use the developer contact listed for fastwin in
+        Google Play Console or contact the repository owner through GitHub:
+        <a href="https://github.com/daryadragan95">https://github.com/daryadragan95</a>.
+      </p>
+    </main>
+  </body>
+</html>
