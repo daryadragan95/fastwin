@@ -164,9 +164,9 @@ fun GameScreen(
         when (uiState.phase) {
             GamePhase.READY -> {
                 OverlayCard(
-                    title = "Dribble Master",
-                    body = "Обходи препятствия и собирай бонусы.\nУправление: веди мяч пальцем по экрану.",
-                    buttonText = "Старт",
+                    title = "fastwin",
+                    body = "Dodge obstacles and collect bonuses.\nControl: drag the ball with your finger.",
+                    buttonText = "Start",
                     onButtonClick = onStartClicked,
                     modifier = Modifier.align(Alignment.Center)
                 )
@@ -174,9 +174,9 @@ fun GameScreen(
 
             GamePhase.GAME_OVER -> {
                 OverlayCard(
-                    title = "Игра окончена",
-                    body = "Счет: ${uiState.score}\nРекорд: ${uiState.highScore}",
-                    buttonText = "Сыграть еще",
+                    title = "Game Over",
+                    body = "Score: ${uiState.score}\nBest: ${uiState.highScore}",
+                    buttonText = "Play Again",
                     onButtonClick = onRestartClicked,
                     modifier = Modifier.align(Alignment.Center)
                 )
@@ -184,9 +184,9 @@ fun GameScreen(
 
             GamePhase.PAUSED -> {
                 OverlayCard(
-                    title = "Пауза",
-                    body = "Нажми продолжить, чтобы вернуться в игру.",
-                    buttonText = "Продолжить",
+                    title = "Paused",
+                    body = "Tap continue to return to the game.",
+                    buttonText = "Continue",
                     onButtonClick = onPauseClicked,
                     modifier = Modifier.align(Alignment.Center)
                 )
@@ -221,12 +221,12 @@ private fun TopHud(
         ) {
             Column {
                 Text(
-                    text = "Счет: $score",
+                    text = "Score: $score",
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = Color.White
                 )
                 Text(
-                    text = "Рекорд: $highScore",
+                    text = "Best: $highScore",
                     style = MaterialTheme.typography.bodyMedium,
                     color = Color.White.copy(alpha = 0.85f)
                 )
@@ -234,7 +234,7 @@ private fun TopHud(
 
             if (phase == GamePhase.RUNNING) {
                 Button(onClick = onPauseClicked) {
-                    Text("Пауза")
+                    Text("Pause")
                 }
             }
         }
@@ -243,8 +243,8 @@ private fun TopHud(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            StatPill(label = "Дистанция", value = "$distanceMeters м")
-            StatPill(label = "Щит", value = "${shieldRemainingMs / 1000}s")
+            StatPill(label = "Distance", value = "${distanceMeters}m")
+            StatPill(label = "Shield", value = "${shieldRemainingMs / 1000}s")
             StatPill(label = "x2", value = "${multiplierRemainingMs / 1000}s")
         }
     }

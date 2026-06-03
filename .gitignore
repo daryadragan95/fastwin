@@ -3,3 +3,6 @@ local.properties
 **/build/
 .idea/
 .DS_Store
+*.jks
+*.keystore
+app/release/

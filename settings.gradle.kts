@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DribbleMaster"
+rootProject.name = "fastwin"
 include(":app")

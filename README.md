@@ -1,41 +1,41 @@
-# Dribble Master (Android, MVP)
+# fastwin (Android, MVP)
 
-Легкая 2D игра на Jetpack Compose Canvas: веди мяч, избегай препятствий, собирай бонусы.
+A lightweight 2D Android game built with Jetpack Compose Canvas: drag the ball, dodge obstacles, and collect bonuses.
 
-## План MVP
+## MVP Plan
 
-1. Каркас Android-проекта на Kotlin + Compose.
-2. Чистая игровая логика (`GameEngine`) отдельно от UI.
-3. Состояние через `ViewModel + StateFlow`.
-4. Canvas-рендер и drag-управление.
-5. Локальный рекорд в DataStore.
-6. Базовые тесты логики.
+1. Kotlin + Compose Android project setup.
+2. Pure game logic in `GameEngine`, separate from UI.
+3. State management with `ViewModel + StateFlow`.
+4. Canvas rendering and drag controls.
+5. Local high score storage with DataStore.
+6. Basic game logic tests.
 
-## Структура
+## Structure
 
-- `app/src/main/java/com/striklewin/apps/MainActivity.kt` — вход в приложение и WebView gate.
-- `app/src/main/java/com/striklewin/apps/data/web/` — Firestore-конфиг WebView.
-- `app/src/main/java/com/striklewin/apps/ui/web/` — полноэкранный WebView.
-- `app/src/main/java/com/striklewin/apps/core/model/` — модели и события игры.
-- `app/src/main/java/com/striklewin/apps/core/persistence/` — сохранение рекорда.
-- `app/src/main/java/com/striklewin/apps/feature/game/domain/` — логика симуляции.
-- `app/src/main/java/com/striklewin/apps/feature/game/presentation/` — `UiState` и `ViewModel`.
-- `app/src/main/java/com/striklewin/apps/feature/game/ui/` — игровой экран и HUD.
-- `app/src/main/java/com/striklewin/apps/ui/theme/` — тема Material 3.
+- `app/src/main/java/com/striklewin/apps/MainActivity.kt` - app entry point and WebView gate.
+- `app/src/main/java/com/striklewin/apps/data/web/` - Firestore WebView config.
+- `app/src/main/java/com/striklewin/apps/ui/web/` - fullscreen WebView.
+- `app/src/main/java/com/striklewin/apps/core/model/` - game models and events.
+- `app/src/main/java/com/striklewin/apps/core/persistence/` - high score persistence.
+- `app/src/main/java/com/striklewin/apps/feature/game/domain/` - game simulation logic.
+- `app/src/main/java/com/striklewin/apps/feature/game/presentation/` - `UiState` and `ViewModel`.
+- `app/src/main/java/com/striklewin/apps/feature/game/ui/` - game screen and HUD.
+- `app/src/main/java/com/striklewin/apps/ui/theme/` - Material 3 theme.
 
-## Реализовано в MVP
+## Implemented
 
-- Экран Ready / Running / Paused / Game Over.
-- Drag-управление мячом.
-- 3 типа препятствий: `CONE`, `DEFENDER`, `PIT`.
-- 2 бонуса: `SHIELD` (3 сек), `SCORE_X2` (5 сек).
-- Счет, дистанция, локальный high score.
-- Haptic-отклик на критические события.
+- Ready / Running / Paused / Game Over states.
+- Drag-based ball controls.
+- 3 obstacle types: `CONE`, `DEFENDER`, `PIT`.
+- 2 bonuses: `SHIELD` (3 seconds), `SCORE_X2` (5 seconds).
+- Score, distance, and local high score.
+- Haptic feedback for critical events.
 
-## Запуск
+## Run
 
 ```bash
 ./gradlew :app:assembleDebug
 ```
 
-Если Android SDK не настроен локально, добавьте `local.properties` с `sdk.dir`.
+If the Android SDK is not configured locally, add `local.properties` with `sdk.dir`.
