@@ -8,6 +8,17 @@ android {
     namespace = "com.striklewin.apps"
     compileSdk = 34
 
+    val releaseKeystorePath = System.getenv("ANDROID_KEYSTORE_PATH")
+    val releaseKeystorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+    val releaseKeyAlias = System.getenv("ANDROID_KEY_ALIAS")
+    val releaseKeyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+    val hasReleaseSigning = listOf(
+        releaseKeystorePath,
+        releaseKeystorePassword,
+        releaseKeyAlias,
+        releaseKeyPassword
+    ).all { !it.isNullOrBlank() }
+
     defaultConfig {
         applicationId = "com.striklewin.apps"
         minSdk = 26
@@ -21,8 +32,22 @@ android {
         }
     }
 
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = file(releaseKeystorePath!!)
+                storePassword = releaseKeystorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
