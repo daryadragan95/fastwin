@@ -83,65 +83,24 @@
         working as expected and is not sent to our own server.
       </p>
 
-      <h2>Remote Configuration and Firebase</h2>
-      <p>
-        The app uses Firebase Firestore to read a remote configuration value from
-        the collection <strong>config</strong>, document <strong>app</strong>, field
-        <strong>url</strong>. This value is used to decide whether the app should
-        open the native game experience or a fullscreen WebView.
-      </p>
-      <p>
-        When the app contacts Firebase, Google/Firebase may process technical data
-        such as device information, app information, IP address, network information,
-        and diagnostics according to Google's own privacy terms.
-      </p>
-
-      <h2>WebView, Cookies, and Website Content</h2>
-      <p>
-        If the remote configuration provides a web URL, fastwin opens that URL in a
-        fullscreen WebView. The WebView supports JavaScript, DOM storage, cookies,
-        and third-party cookies so that the website can function correctly.
-      </p>
-      <p>
-        Websites opened inside the WebView may collect information according to
-        their own privacy practices. We do not control the privacy practices of
-        third-party websites shown inside the WebView.
-      </p>
-
-      <h2>Camera, Files, and Downloads</h2>
-      <p>
-        The app includes WebView support for file selection, file upload, downloads,
-        and camera capture through Android's FileProvider. These features are used
-        only when you interact with a website inside the WebView that requests file
-        upload or camera capture.
-      </p>
-      <p>
-        The app does not access your camera or files in the background. Camera or
-        file access happens only after an action you initiate and after any required
-        Android permission flow.
-      </p>
-
       <h2>How We Use Information</h2>
       <p>Information handled by the app is used to:</p>
       <ul>
         <li>Run the game and save local gameplay progress.</li>
-        <li>Read remote configuration from Firebase Firestore.</li>
-        <li>Open WebView content when configured.</li>
-        <li>Support WebView features such as cookies, file upload, camera capture, and downloads.</li>
         <li>Maintain app functionality, security, and reliability.</li>
       </ul>
 
       <h2>Data Sharing</h2>
       <p>
-        We do not sell your personal information. Technical information may be
-        processed by service providers used by the app, including Google Firebase
-        and services used by websites opened inside the WebView.
+        We do not sell your personal information. The app does not require an
+        account and does not share your locally stored gameplay data with our own
+        server.
       </p>
 
       <h2>Data Retention and Deletion</h2>
       <p>
-        Local app data, such as high scores and cached configuration values, remains
-        on your device until you clear the app data or uninstall the app.
+        Local app data, such as high scores and preferences, remains on your device
+        until you clear the app data or uninstall the app.
       </p>
       <p>
         You can delete local app data through Android system settings by clearing
@@ -152,16 +111,15 @@
       <p>
         fastwin is not directed to children under 13. We do not knowingly collect
         personal information from children under 13. If you believe a child has
-        provided personal information through content opened in the WebView, please
-        contact the operator of that website or contact us through the developer
+        provided personal information, please contact us through the developer
         contact listed on Google Play.
       </p>
 
       <h2>Security</h2>
       <p>
-        We use reasonable technical measures provided by Android, Firebase, and
-        GitHub Pages to operate the app and this policy page. No method of
-        electronic transmission or storage is completely secure.
+        We use reasonable technical measures provided by Android and GitHub Pages
+        to operate the app and this policy page. No method of electronic
+        transmission or storage is completely secure.
       </p>
 
       <h2>Changes to This Policy</h2>
