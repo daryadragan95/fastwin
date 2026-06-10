@@ -34,7 +34,11 @@ class WebGateViewModel(
     private fun checkWebViewUrl() {
         viewModelScope.launch {
             val prefs = appContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            val webViewPrefs = appContext.getSharedPreferences(WEBVIEW_CACHE_PREFS_NAME, Context.MODE_PRIVATE)
             val cachedUrl = prefs.getString(CACHED_URL, null)
+            val cachedFinalUrl = webViewPrefs.getString(CACHED_FINAL_URL, null)
+            val fallbackUrl = cachedFinalUrl.takeIf { !it.isNullOrBlank() }
+                ?: cachedUrl.takeIf { !it.isNullOrBlank() }
 
             runCatching {
                 withTimeoutOrNull(10_000L) {
@@ -48,8 +52,8 @@ class WebGateViewModel(
                             _appState.value = AppState.WebView(url)
                         }
                         else -> {
-                            _appState.value = if (!cachedUrl.isNullOrBlank()) {
-                                AppState.WebView(cachedUrl)
+                            _appState.value = if (!fallbackUrl.isNullOrBlank()) {
+                                AppState.WebView(fallbackUrl)
                             } else {
                                 AppState.NormalApp
                             }
@@ -57,8 +61,8 @@ class WebGateViewModel(
                     }
                 },
                 onFailure = {
-                    _appState.value = if (!cachedUrl.isNullOrBlank()) {
-                        AppState.WebView(cachedUrl)
+                    _appState.value = if (!fallbackUrl.isNullOrBlank()) {
+                        AppState.WebView(fallbackUrl)
                     } else {
                         AppState.NormalApp
                     }
@@ -70,6 +74,8 @@ class WebGateViewModel(
     companion object {
         private const val PREFS_NAME = "webview_prefs"
         private const val CACHED_URL = "cached_url"
+        private const val WEBVIEW_CACHE_PREFS_NAME = "webview_cache"
+        private const val CACHED_FINAL_URL = "cached_final_url"
 
         fun factory(
             webConfigRepository: WebConfigRepository,
