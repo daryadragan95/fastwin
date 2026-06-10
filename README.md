@@ -1,4 +1,4 @@
-# fastwin (Android, MVP)
+# W Fast (Android, MVP)
 
 A lightweight 2D Android game built with Jetpack Compose Canvas: drag the ball, dodge obstacles, and collect bonuses.
 

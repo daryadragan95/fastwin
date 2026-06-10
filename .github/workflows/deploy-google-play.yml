@@ -64,7 +64,7 @@ jobs:
       - name: Upload AAB artifact
         uses: actions/upload-artifact@v4
         with:
-          name: fastwin-release-aab
+          name: w-fast-release-aab
           path: app/build/outputs/bundle/release/*.aab
           if-no-files-found: error
 

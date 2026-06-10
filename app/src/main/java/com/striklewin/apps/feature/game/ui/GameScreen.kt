@@ -164,7 +164,7 @@ fun GameScreen(
         when (uiState.phase) {
             GamePhase.READY -> {
                 OverlayCard(
-                    title = "fastwin",
+                    title = "W Fast",
                     body = "Dodge obstacles and collect bonuses.\nControl: drag the ball with your finger.",
                     buttonText = "Start",
                     onButtonClick = onStartClicked,

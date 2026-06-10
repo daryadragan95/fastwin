@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "fastwin"
+rootProject.name = "W Fast"
 include(":app")
